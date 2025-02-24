@@ -1,3 +1,0 @@
-READ-ME 
-
-Using the MNIST dataset, a neural network model is implemented.
