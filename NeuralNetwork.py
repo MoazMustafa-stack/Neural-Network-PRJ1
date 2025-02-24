@@ -21,6 +21,9 @@ X_train = data_train[1:n]
 X_train = X_train/255
 _,m_train = X_train.shape # number of training examples
 
+learning_rate = 0.1 #Change as per testing
+epochs = 500 #Change as per testing
+
 def init_params():
     W1 = np.random.rand(10,784) - 0.5 # random weights for first layer, 10 neurons, 784 features
     b1 = np.random.rand(10,1) - 0.5 # random bias for first layer and 10 neurons for second layer
@@ -95,7 +98,7 @@ def gradient_descent(X, Y, iterations, alpha):
             print(f"Accuracy: {get_accuracy(predictions, Y)*100:.3f}%")
     return W1, b1, W2, b2
 
-W1, b1, W2 , b2 = gradient_descent(X_train, Y_train, 500, 0.1)  #Gave an 84% accuracy on the training data
+W1, b1, W2 , b2 = gradient_descent(X_train, Y_train, epochs, learning_rate)  #Gave an 84% accuracy on the training data
 
 def make_predictions(X, W1, b1, W2, b2):
     _, _, _, A2 = forward_propagation(W1, b1, W2, b2, X)
